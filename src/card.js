@@ -44,7 +44,7 @@ const takeTurn = (guess, round) => {
 
 
 const calculatePercentCorrect = (rounds) => {
-    let totalsRounds = rounds.length;
+    let totalRounds = rounds.length;
     let totalCorrect = 0;
 
     rounds.forEach((round) => {
@@ -52,7 +52,7 @@ const calculatePercentCorrect = (rounds) => {
             totalCorrect++;
         };
     });
-    return (totalCorrect / totalsRounds) * 100;
+    return (totalCorrect / totalRounds) * 100;
 };
 
 const endRound = (rounds) => {
