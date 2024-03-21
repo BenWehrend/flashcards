@@ -23,23 +23,35 @@ const countDeck = (cards) => {
     return cards.length;
 };
 
-const createRound = (deck) => {
+function createRound(deck) {
     return {
-        deck: deck,
-        currentCard: deck[0],
-        turns: 0,
-        incorrectGuesses: []
+      deck,
+      currentCard: deck[0],
+      turns: 0,
+      incorrectGuesses: [],
+      getNextCard: function() {
+        if (this.deck.length > this.turns) {
+          return this.deck[this.turns];
+        }
+        return 'Game Over!';
+      }
     };
-};
+  }
 
-const takeTurn = (guess, round) => {
-    let result = evaluateGuess(guess, round.currentCard);
-    if (result === "Incorrect!") {
-        round.incorrectGuesses.push(round.currentCard.id)
-    };
+function takeTurn(guess, round) {
     round.turns++;
-    round.currentCard = round.deck[round.turns];
-    return result;
+  
+    let currentCard = round.currentCard;
+    let response;
+  
+    if (guess === currentCard.correctAnswer) {
+      response = "Correct!";
+    } else {
+      round.incorrectGuesses.push(currentCard.id);
+      response = "Incorrect!";
+    };
+    round.currentCard = round.getNextCard();
+    return response;
 };
 
 
