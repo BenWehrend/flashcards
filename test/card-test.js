@@ -155,7 +155,7 @@ describe('takeTurn', function() {
 
     takeTurn('Yuan', round);
 
-    expect(round.incorrectGuesses[0]).to.equal(2);
+    expect(round.incorrectGuesses).to.include(card2.id);
   });
 });
 
