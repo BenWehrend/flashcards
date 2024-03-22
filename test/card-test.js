@@ -123,7 +123,6 @@ describe('takeTurn', function() {
     takeTurn('Diamond', round);
 
     expect(round.turns).to.equal(firstTurn + 1);
-
   });
 
   it('should update next card in deck to the current card', function() {
