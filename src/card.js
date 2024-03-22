@@ -31,12 +31,15 @@ function createRound(deck) {
       incorrectGuesses: [],
       getNextCard: function() {
         if (this.deck.length > this.turns) {
+            // console.log('dl', this.deck.length)
+            // console.log('turns', this.turns)
+            // console.log('dt', this.deck[this.turns])
           return this.deck[this.turns];
-        }
+        };
         return 'Game Over!';
       }
     };
-  }
+};
 
 function takeTurn(guess, round) {
     round.turns++;
@@ -72,11 +75,11 @@ const endRound = (rounds) => {
     rounds.forEach((round) => {
         if (round.incorrectGuesses.length === 0) {
             totalCorrect++;
-        }
-    })
+        };
+    });
     let percentCorrect = (totalCorrect / rounds.length) * 100;
     return `** Round over! ** You answered ${Math.round(percentCorrect)}% of the questions correctly!`;
-}
+};
 
 module.exports = {
     createCard,
@@ -87,4 +90,4 @@ module.exports = {
     takeTurn,
     calculatePercentCorrect,
     endRound
-}
+};

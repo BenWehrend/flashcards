@@ -6,6 +6,7 @@ let { createCard, evaluateGuess, createDeck, countDeck, createRound, takeTurn, c
 describe('createCard', function() {
   it('should be a function', function() {
     expect(createCard).to.be.a('function');
+
   });
 
   it('should create a card and its properties', function() {
@@ -69,7 +70,6 @@ describe('createRound', function() {
     let deck = [card1]
     let round = createRound(deck);
 
-    // expect(round).to.exist;
     expect(round.deck).to.be.an('array');
     expect(round.currentCard).to.deep.equal(card1);
     expect(round.turns).to.equal(0);
@@ -114,7 +114,7 @@ describe('takeTurn', function() {
     let answer2 = takeTurn('Yen', round);
     expect(answer2).to.be.equal("Correct!");
     expect(round.turns).to.equal(2);
-  })
+  });
 
   it('should update turn count when guess is made', function() {
     let round = createRound([card1]);

@@ -11,4 +11,11 @@ function printQuestion(round) {
   util.main(round);
 }
 
-module.exports = { printMessage, printQuestion };
+const start = (deck, question) => {
+  
+}
+
+module.exports = { 
+  printMessage, 
+  printQuestion 
+};
