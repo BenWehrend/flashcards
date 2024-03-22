@@ -2,14 +2,11 @@ const inquirer = require('inquirer');
 const { createCard, createDeck, createRound } = require('./src/card');
 const { prototypeData } = require('./src/data');
 
-// creates cards from your prototype data
 let cards = prototypeData.map(card => createCard(card.id, card.question, card.choices, card.answer));
 
-// creates a deck and a round with your cards
 let deck = createDeck(...cards);
 let round = createRound(deck);
 
-// function to ask a question using inquirer
 const askQuestion = (card) => {
   return inquirer.prompt([
     {
@@ -21,7 +18,6 @@ const askQuestion = (card) => {
   ]);
 }
 
-// function to run the game
 async function start(round) {
     let correctAnswers = 0;
 
