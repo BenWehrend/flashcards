@@ -31,9 +31,6 @@ function createRound(deck) {
       incorrectGuesses: [],
       getNextCard: function() {
         if (this.deck.length > this.turns) {
-            // console.log('dl', this.deck.length)
-            // console.log('turns', this.turns)
-            // console.log('dt', this.deck[this.turns])
           return this.deck[this.turns];
         };
         return 'Game Over!';

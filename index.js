@@ -2,7 +2,6 @@ const inquirer = require('inquirer');
 const { createCard, createDeck, createRound } = require('./src/card');
 const { prototypeData } = require('./src/data');
 
-
 let cards = prototypeData.map(card => createCard(card.id, card.question, card.choices, card.answer));
 
 let deck = createDeck(...cards);
@@ -35,7 +34,6 @@ async function start(round) {
     }
 
     let score = (correctAnswers / round.deck.length) * 100;
-
     console.log(`Game over! Your score is ${score.toFixed(2)}% correct. Enter "node index.js" to play again.`);
   }
 
