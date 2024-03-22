@@ -11,10 +11,6 @@ function printQuestion(round) {
   util.main(round);
 }
 
-const start = (deck, question) => {
-  
-}
-
 module.exports = { 
   printMessage, 
   printQuestion 

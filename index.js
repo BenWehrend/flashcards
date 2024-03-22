@@ -1,12 +1,18 @@
+// This is where your project starts.
+
+//console.log('Your project is running...'); 
 const inquirer = require('inquirer');
 const { createCard, createDeck, createRound } = require('./src/card');
 const { prototypeData } = require('./src/data');
 
+// Create cards from your prototype data
 let cards = prototypeData.map(card => createCard(card.id, card.question, card.choices, card.answer));
 
+// Create a deck and a round with your cards
 let deck = createDeck(...cards);
 let round = createRound(deck);
 
+// Function to ask a question using inquirer
 function askQuestion(card) {
   return inquirer.prompt([
     {
@@ -18,6 +24,7 @@ function askQuestion(card) {
   ]);
 }
 
+// Function to run the game
 async function start(round) {
     let correctAnswers = 0;
 
@@ -34,6 +41,7 @@ async function start(round) {
     }
 
     let score = (correctAnswers / round.deck.length) * 100;
+
     console.log(`Game over! Your score is ${score.toFixed(2)}% correct. Enter "node index.js" to play again.`);
   }
 

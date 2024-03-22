@@ -23,7 +23,7 @@ const countDeck = (cards) => {
     return cards.length;
 };
 
-function createRound(deck) {
+const createRound = (deck) => {
     return {
       deck,
       currentCard: deck[0],
@@ -31,6 +31,9 @@ function createRound(deck) {
       incorrectGuesses: [],
       getNextCard: function() {
         if (this.deck.length > this.turns) {
+            // console.log('dl', this.deck.length)
+            // console.log('turns', this.turns)
+            // console.log('dt', this.deck[this.turns])
           return this.deck[this.turns];
         };
         return 'Game Over!';
@@ -38,7 +41,7 @@ function createRound(deck) {
     };
 };
 
-function takeTurn(guess, round) {
+const takeTurn = (guess, round) => {
     round.turns++;
   
     let currentCard = round.currentCard;
