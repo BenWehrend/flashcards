@@ -13,7 +13,7 @@ let deck = createDeck(...cards);
 let round = createRound(deck);
 
 // Function to ask a question using inquirer
-function askQuestion(card) {
+const askQuestion = (card) => {
   return inquirer.prompt([
     {
       type: 'list',
@@ -41,7 +41,7 @@ async function start(round) {
     }
 
     let score = (correctAnswers / round.deck.length) * 100;
-
+  
     console.log(`Game over! Your score is ${score.toFixed(2)}% correct. Enter "node index.js" to play again.`);
   }
 
