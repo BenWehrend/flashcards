@@ -2,7 +2,7 @@
 
 ## Abstract
 
-This is a simple trivia game that plays on the command line.
+I made a simple trivia game that plays on the command line. It tells you when you're right or wrong and gives you a final score at the end.
 
 ## Application showcase:
 
@@ -10,7 +10,7 @@ This is a simple trivia game that plays on the command line.
 
 ## What I used to create the game:
 
-This game is made from Javascript in VSCode Select. 
+I made this game using Javascript in VSCode Select. 
 
 ## Running The Game
 
