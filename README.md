@@ -6,7 +6,7 @@ This is a simple trivia game that plays on the command line.
 
 ## Application showcase:
 
-
+![flashcardsGif](https://github.com/BenWehrend/flashcards/assets/155917289/6c9204de-d8ac-4503-bc5a-eab664cac1a6)
 
 ## What I used to create the game:
 
